@@ -11,7 +11,7 @@
  Target Server Version : 80029
  File Encoding         : 65001
 
- Date: 05/05/2024 14:13:37
+ Date: 07/05/2024 19:29:41
 */
 
 SET NAMES utf8mb4;
@@ -29,7 +29,11 @@ CREATE TABLE `t_category`  (
   `is_deleted` tinyint NOT NULL DEFAULT 0 COMMENT '逻辑删除：0：未删除 1：已删除',
   PRIMARY KEY (`category_id`) USING BTREE,
   UNIQUE INDEX `uk_category_name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '分类表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 40000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '分类表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_category
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_collection
@@ -41,7 +45,11 @@ CREATE TABLE `t_collection`  (
   `user_id` bigint NOT NULL COMMENT '用户id',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间',
   PRIMARY KEY (`collection_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '收藏表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 50000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '收藏表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_collection
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_comment
@@ -54,7 +62,11 @@ CREATE TABLE `t_comment`  (
   `comment` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '评论内容',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '评论时间',
   PRIMARY KEY (`comment_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '评论表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 70000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '评论表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_comment
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_like
@@ -66,7 +78,11 @@ CREATE TABLE `t_like`  (
   `user_id` bigint NOT NULL COMMENT '点赞的用户',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '点赞时间',
   PRIMARY KEY (`like_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '点赞表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 60000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '点赞表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_like
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_note
@@ -84,6 +100,10 @@ CREATE TABLE `t_note`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of t_note
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_note_category_rel
 -- ----------------------------
 DROP TABLE IF EXISTS `t_note_category_rel`;
@@ -92,7 +112,11 @@ CREATE TABLE `t_note_category_rel`  (
   `note_id` bigint NOT NULL COMMENT '笔记id',
   `category_id` bigint NOT NULL COMMENT '分类id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记分类关系表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记分类关系表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_note_category_rel
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_note_image
@@ -103,7 +127,11 @@ CREATE TABLE `t_note_image`  (
   `note_id` bigint NOT NULL COMMENT '笔记id',
   `image_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL COMMENT '图片地址',
   PRIMARY KEY (`image_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记图片表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 200000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记图片表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_note_image
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_note_topic_rel
@@ -114,7 +142,11 @@ CREATE TABLE `t_note_topic_rel`  (
   `note_id` bigint NOT NULL COMMENT '笔记id',
   `topic_id` bigint NOT NULL COMMENT '话题id',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记话题关系表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记话题关系表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_note_topic_rel
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_note_video
@@ -125,7 +157,11 @@ CREATE TABLE `t_note_video`  (
   `note_id` bigint NOT NULL COMMENT '笔记id',
   `video_url` varbinary(255) NOT NULL COMMENT '视频地址',
   PRIMARY KEY (`video_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记视频表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 300000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '笔记视频表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_note_video
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_share
@@ -137,7 +173,11 @@ CREATE TABLE `t_share`  (
   `user_id` bigint NOT NULL COMMENT '分享的用户id',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '分享时间',
   PRIMARY KEY (`share_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '分享表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 90000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '分享表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_share
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_topic
@@ -151,7 +191,11 @@ CREATE TABLE `t_topic`  (
   `is_deleted` tinyint NOT NULL DEFAULT 0 COMMENT '逻辑删除：0：未删除 1：已删除',
   PRIMARY KEY (`topic_id`) USING BTREE,
   UNIQUE INDEX `uk_topic_name`(`name` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '话题表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 30000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '话题表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_topic
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_user
@@ -175,6 +219,10 @@ CREATE TABLE `t_user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 10000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of t_user
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for t_user_role
 -- ----------------------------
 DROP TABLE IF EXISTS `t_user_role`;
@@ -185,5 +233,9 @@ CREATE TABLE `t_user_role`  (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`role_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 20000 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_bin COMMENT = '用户角色表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of t_user_role
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

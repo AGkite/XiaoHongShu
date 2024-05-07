@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e50446d-2090-4c1f-91d9-f66dbea4c01b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/controller/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/src/main/java/com/newone/framework/common/constant/DateConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/src/main/java/com/newone/framework/common/exception/BaseExceptionInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/src/main/java/com/newone/framework/common/exception/BizException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/src/main/java/com/newone/framework/common/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-common/src/main/java/com/newone/framework/common/util/JsonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-spring-boot-starter-biz-operationlog/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-spring-boot-starter-biz-operationlog/src/main/java/com/newone/framework/biz/operationlog/aspect/ApiOperationLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-spring-boot-starter-biz-operationlog/src/main/java/com/newone/framework/biz/operationlog/aspect/ApiOperationLogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-spring-boot-starter-biz-operationlog/src/main/java/com/newone/framework/biz/operationlog/config/ApiOperationLogAutoConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaohongshu-framework/xiaohongshu-spring-boot-starter-biz-operationlog/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/xiaohongshu.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/XiaohongshuAuthApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/demos/web/BasicController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/demos/web/PathVariableController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/main/java/com/newone/xiaohongshu/auth/demos/web/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaohongshu-auth/src/test/java/com/newone/xiaohongshu/auth/XiaohongshuAuthApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.8.6\Repository" />
+        <option name="mavenHome" value="D:/apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2g8LH332tTOMdNfyNhbZR3TiDMq" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/gradle-8.7/Repository",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="XiaohongshuAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="xiaohongshu-auth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.newone.xiaohongshu.auth.XiaohongshuAuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e50446d-2090-4c1f-91d9-f66dbea4c01b" name="Changes" comment="" />
+      <created>1715074168466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715074168466</updated>
+      <workItem from="1715074169558" duration="3929000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
