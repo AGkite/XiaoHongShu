@@ -1,7 +1,7 @@
 package com.newone.xiaohongshu.jwt.service;
 
 import com.newone.xiaohongshu.common.domain.dos.UserDO;
-import com.newone.xiaohongshu.common.domain.mapper.UserDOMapper;
+import com.newone.xiaohongshu.common.domain.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -16,7 +16,7 @@ import java.util.Objects;
 @Slf4j
 public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
-    private UserDOMapper userDOMapper;
+    private UserMapper userDOMapper;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 从数据库中查询

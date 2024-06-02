@@ -1,8 +1,9 @@
-package com.dala.common.domain.mapper;
+package com.newone.xiaohongshu.common.domain.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.dala.common.domain.dos.CategoryDO;
+import com.newone.xiaohongshu.common.domain.dos.CategoryDO;
+
 
 public interface CategoryMapper extends BaseMapper<CategoryDO> {
 

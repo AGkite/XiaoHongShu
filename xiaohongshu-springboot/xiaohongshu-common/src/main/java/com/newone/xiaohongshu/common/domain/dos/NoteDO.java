@@ -1,4 +1,4 @@
-package com.dala.common.domain.dos;
+package com.newone.xiaohongshu.common.domain.dos;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -34,17 +34,9 @@ public class NoteDO {
      */
     private String content;
     /**
-     * ip
-     */
-    private String ip;
-    /**
      * 地址
      */
     private String address;
-    /**
-     * 搭圈总人数
-     */
-    private Integer buddyTotalMember;
     /**
      * 创建时间
      */
