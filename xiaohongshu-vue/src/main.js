@@ -8,9 +8,7 @@ import router from '@/router'
 // 导入全局路由守卫
 import '@/permission'
 // 引入全局状态管理 Pinia
-import { createPinia } from 'pinia'
-// 创建 Pinia 实例
-const pinia = createPinia()
+import pinia from '@/stores'
 
 // 导入 Element Plus 图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'

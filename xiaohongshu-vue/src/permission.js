@@ -1,5 +1,5 @@
 import router from '@/router/index'
-import { getToken } from '@/utils/auth'
+import { getToken } from '@/utils/cookie'
 import { showMessage } from '@/utils/util'
 
 

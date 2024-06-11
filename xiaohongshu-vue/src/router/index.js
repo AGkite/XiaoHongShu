@@ -1,5 +1,4 @@
 import Index from '@/pages/frontend/index.vue'
-import AdminIndex from '@/pages/admin/index.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 统一在这里声明所有路由
@@ -9,13 +8,6 @@ const routes = [
         component: Index, // 对应组件
         meta: { // meta 信息
             title: 'XiaoHongShu 首页' // 页面标题
-        }
-    },
-    {
-        path: '/admin/index',
-        component: AdminIndex,
-        meta: {
-            title: '管理员首页'
         }
     }
 ]

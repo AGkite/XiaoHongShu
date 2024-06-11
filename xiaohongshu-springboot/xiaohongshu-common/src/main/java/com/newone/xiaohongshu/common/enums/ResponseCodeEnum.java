@@ -15,6 +15,10 @@ public enum ResponseCodeEnum implements BaseExceptionInterface {
     // ----------- 业务异常状态码 -----------
     LOGIN_FAIL("20000", "登录失败"),
     USERNAME_OR_PWD_ERROR("20001", "用户名或密码错误"),
+    CATEGORY_NAME_IS_EXISTED("20002", "该社区分类已存在，请勿重复添加！"),
+    UNAUTHORIZED("20003", "无访问权限，请先登录！"),
+    FORBIDDEN("20004", "演示账号仅支持查询操作！"),
+    USERNAME_NOT_FOUND("20005", "该用户不存在"),
     ;
 
     // 异常码

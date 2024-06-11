@@ -1,6 +1,7 @@
 <template>
+    <Header></Header>
     <aside id="logo-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+        class="fixed top-0 left-0 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
         aria-label="Sidebar">
         <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
             <ul class="space-y-2">
@@ -17,7 +18,7 @@
                     </a>
                 </li>
                 <li>
-                    <a @click="router.push('/admin/index')"
+                    <a @click="router.push('/')"
                         class="flex items-center p-2 text-gray-900 rounded-2xl dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg t="1716109800182" class="icon w-5 h-5" viewBox="0 0 1024 1024" version="1.1"
                             xmlns="http://www.w3.org/2000/svg" p-id="14571" width="200" height="200">
@@ -43,38 +44,124 @@
                         <span class="ms-3 text-lg font-semibold">通知</span>
                     </a>
                 </li>
-                <li>
+                <li v-if="isLogined">
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-2xl dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <img src="" alt="avatar" />
                         <span class="ms-3 text-lg font-semibold">我</span>
                     </a>
                 </li>
-                <li>
-                    <button type="button" class="text-white mainred hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
+                <li v-else>
+                    <button type="button" @click="showLoginModal"
+                        class="bg-[#ff2442] hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 text-white font-semibold rounded-full text-base w-full px-5 py-2.5 text-center me-2 mb-2">登录</button>
                 </li>
 
             </ul>
         </div>
     </aside>
 
-    <div class="p-4 sm:ml-64">
-
+    <!-- 登录弹窗 -->
+    <div class="overlay" v-show="showWith && !isLogined">
+        <el-button class="close" @click="showLoginModal" plain round>
+            <el-icon size="x-large">
+                <Close />
+            </el-icon>
+        </el-button>
+        <LoginModal @changeShow="showLoginModal"></LoginModal>
     </div>
+// @changeShow="showWith && !isLogined"
+    <!-- 帖子列表 -->
+    <div class="grid grid-cols-4 gap-4 text-sm absolute left-[280px] top-[138px]">
+        <div class="inline-block w-auto h-auto" v-for="item in noteList" :key="item.noteId">
+            <a href="#">
+                <img class="rounded-2xl transition-opacity duration-300 ease-in-out hover:opacity-50"
+                    :src="item.imageUrl[0]" :alt="item.title" />
+                <p class="py-2">{{ item.title }}</p>
+                <div class="flex justify-between">
+                    <div>
+                        <img class="w-7 h-7 rounded-full mr-2 inline" :src="item.avatar" :alt="item.author">
+                        <span>{{ item.username }}</span>
+                    </div>
+                    <span>❤️{{ item.loveNum }}</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- 返回顶部 -->
+    <ScrollToTopButton></ScrollToTopButton>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { initCollapses } from 'flowbite'
+import { Close } from '@element-plus/icons-vue'
+import { useUserStore } from '@/stores/user'
+import { showMessage } from '@/utils/util'
+import Header from '@/components/frontend/Header.vue'
+import ScrollToTopButton from '@/components/frontend/ScrollToTopButton.vue'
+import LoginModal from '@/components/frontend/LoginModal.vue'
+import { getNoteList } from '@/api/frontend/note'
 
 const router = useRouter()
 
 // 初始化 flowbit 相关组件
 onMounted(() => {
     initCollapses();
+    getNote()
 })
+
+// 获取笔记列表
+const noteList = ref([])
+
+const getNote = async () => {
+    const response = await getNoteList()
+    noteList.value = response.data
+    console.log(response.data)
+}
+
+// 登录弹窗
+const showWith = ref(false)
+const showLoginModal = () => {
+    showWith.value = !showWith.value
+}
+
+// 是否登录，通过 userStore 中的 userInfo 对象是否有数据来判断
+const userStore = useUserStore()
+// 获取 userInfo 对象所有属性名称的数组
+const keys = Object.keys(userStore.userName)
+// 若大于零，则表示用户已登录
+const isLogined = ref(keys.length > 0)
+console.log("isLogined:",isLogined.value)
+console.log("userStore.userName:",userStore.userName.username)
+
+// 退出登录
+const logout = () => {
+    userStore.logout()
+    // 标记为未登录
+    isLogined.value = false
+    showMessage('退出登录成功')
+}
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 设置透明度的背景色 */
+  z-index: 9999; /* 设置一个较大的z-index值，确保图层位于其他内容之上 */
+}
+
+.close {
+  border: 0;
+  position: absolute;
+  left: 73%;
+  top: 18%;
+  background-color: #fff;
+  z-index: 1000; /* 设置一个较大的z-index值，确保图层位于其他内容之上 */
+}</style>
