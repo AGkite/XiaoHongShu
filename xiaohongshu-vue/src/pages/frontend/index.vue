@@ -44,7 +44,7 @@
                         <span class="ms-3 text-lg font-semibold">通知</span>
                     </a>
                 </li>
-                <li v-if="isLogined">
+                <li v-if="Object.keys(userStore.userName).length">
                     <a href="#"
                         class="flex items-center p-2 text-gray-900 rounded-2xl dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <img src="" alt="avatar" />
@@ -61,7 +61,7 @@
     </aside>
 
     <!-- 登录弹窗 -->
-    <div class="overlay" v-show="showWith && !isLogined">
+    <div class="overlay" v-show="showWith && !Object.keys(userStore.userName).length">
         <el-button class="close" @click="showLoginModal" plain round>
             <el-icon size="x-large">
                 <Close />
@@ -69,7 +69,7 @@
         </el-button>
         <LoginModal @changeShow="showLoginModal"></LoginModal>
     </div>
-// @changeShow="showWith && !isLogined"
+<!-- // @changeShow="showWith && !isLogined" -->
     <!-- 帖子列表 -->
     <div class="grid grid-cols-4 gap-4 text-sm absolute left-[280px] top-[138px]">
         <div class="inline-block w-auto h-auto" v-for="item in noteList" :key="item.noteId">
@@ -130,11 +130,12 @@ const showLoginModal = () => {
 // 是否登录，通过 userStore 中的 userInfo 对象是否有数据来判断
 const userStore = useUserStore()
 // 获取 userInfo 对象所有属性名称的数组
-const keys = Object.keys(userStore.userName)
+// const keys = Object.keys(userStore.userName)
+// console.log('keys',keys);
 // 若大于零，则表示用户已登录
-const isLogined = ref(keys.length > 0)
-console.log("isLogined:",isLogined.value)
-console.log("userStore.userName:",userStore.userName.username)
+// const isLogined = ref(keys.length > 0)
+// console.log("isLogined:",isLogined.value)
+// console.log("userStore.userName:",userStore.userName.username)
 
 // 退出登录
 const logout = () => {
