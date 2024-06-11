@@ -74,8 +74,8 @@ const router = useRouter()
 // 账户加密码校验
 // 准备表单对象
 const formLogin = reactive({
-  username: 'newone',
-  password: '123456',
+  username: '',
+  password: '',
   agree: false
 })
 const formRegister = reactive({
