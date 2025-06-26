@@ -1,0 +1,1 @@
+package com.newone.xiaohongshu.auth.domain;

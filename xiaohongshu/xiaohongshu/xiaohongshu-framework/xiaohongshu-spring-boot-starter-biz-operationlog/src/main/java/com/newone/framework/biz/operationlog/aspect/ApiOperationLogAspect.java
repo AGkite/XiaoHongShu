@@ -36,7 +36,7 @@ public class ApiOperationLogAspect {
         String argsJsonStr = Arrays.stream(args).map(toJsonStr()).collect(Collectors.joining(", "));
 
         // 功能描述信息
-        String description = getApiOperstionLogDescription(joinPoint);
+        String description = getApiOperationLogDescription(joinPoint);
 
         // 打印请求相关参数
         log.info("====== 请求开始: [{}], 入参: {}, 请求类: {}, 请求方法: {} ========================",
@@ -55,7 +55,7 @@ public class ApiOperationLogAspect {
         return result;
     }
 
-    private String getApiOperstionLogDescription(ProceedingJoinPoint joinPoint) {
+    private String getApiOperationLogDescription(ProceedingJoinPoint joinPoint) {
         // 1. 从 ProceedingJoinPoint 获取 MethodSignature
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 
