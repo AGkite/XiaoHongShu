@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>com.newone</groupId>
-        <artifactId>xiaohongshu</artifactId>
+        <artifactId>xiaohongshu-springcloud</artifactId>
         <version>${revision}</version>
     </parent>
 
@@ -19,7 +19,7 @@
         <!-- 通用工具组件 -->
         <module>xiaohongshu-common</module>
         <!-- 接口日志组件 -->
-        <module>xiaohongshu-spring-boot-starter-biz-operationlog</module>
+        <module>xiaohongshu-springboot-starter-biz-operationlog</module>
     </modules>
 
 </project>

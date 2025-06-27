@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.newone</groupId>
-  <artifactId>xiaohongshu</artifactId>
+  <artifactId>xiaohongshu-springcloud</artifactId>
   <version>${revision}</version>
 
   <!-- 项目名称 -->
@@ -19,6 +19,7 @@
     <!-- 认证服务 -->
     <module>xiaohongshu-auth</module>
     <!-- 平台基础框架 -->
+    <module>xiaohongshu-framework</module>
     <module>xiaohongshu-framework</module>
   </modules>
 
@@ -41,6 +42,8 @@
     <lombok.version>1.18.30</lombok.version>
     <jackson.version>2.16.1</jackson.version>
     <mysql-connector-java.version>8.0.29</mysql-connector-java.version>
+    <druid.version>1.2.21</druid.version>
+    <mybatis-generator-maven-plugin.version>1.4.2</mybatis-generator-maven-plugin.version>
 
   </properties>
 
@@ -122,6 +125,12 @@
         <version>${mysql-connector-java.version}</version>
       </dependency>
 
+      <!-- Druid 数据库连接池 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-3-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -159,6 +168,26 @@
             </annotationProcessorPaths>
           </configuration>
         </plugin>
+        <!-- 代码生成 -->
+        <plugin>
+          <groupId>org.mybatis.generator</groupId>
+          <artifactId>mybatis-generator-maven-plugin</artifactId>
+          <version>${mybatis-generator-maven-plugin.version}</version>
+          <configuration>
+            <!-- 允许移动生成的文件 -->
+            <verbose>true</verbose>
+            <!-- 允许覆盖生成的文件 -->
+            <overwrite>true</overwrite>
+          </configuration>
+          <!-- 此插件需要连接数据库，所以需要依赖 MySQL 驱动 -->
+          <dependencies>
+            <dependency>
+              <groupId>mysql</groupId>
+              <artifactId>mysql-connector-java</artifactId>
+              <version>${mysql-connector-java.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
       </plugins>
     </pluginManagement>
 
@@ -177,5 +206,4 @@
       <url>https://maven.aliyun.com/repository/public</url>
     </repository>
   </repositories>
-
 </project>
