@@ -4,10 +4,10 @@ package com.newone.xiaohongshu.auth.domain.mapper;
 import com.newone.xiaohongshu.auth.domain.dataobject.UserDO;
 
 /**
- * 针对表【t_user（用户测试表）】的数据库操作Mapper
+ * 针对表【t_user（用户表）】的数据库操作Mapper
  *
  * @author liuwh
- * @createDate 2025-06-26 22:18
+ * @createDate 2025-07-01 17:20
  */
 public interface UserDOMapper {
     int deleteByPrimaryKey(Long id);
@@ -21,4 +21,11 @@ public interface UserDOMapper {
     int updateByPrimaryKeySelective(UserDO row);
 
     int updateByPrimaryKey(UserDO row);
+
+    /**
+     * 通过手机号查询用户记录
+     * @param phone
+     * @return
+     */
+    UserDO selectByPhone(String phone);
 }
